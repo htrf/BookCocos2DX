@@ -28,5 +28,15 @@ bool GameScene::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Point origin = Director::getInstance()->getVisibleOrigin();
 
+    auto bg = Sprite:create("GsmeBckground.png");
+    bg->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    this->addChild(bg,-1);
+    
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile
+        ("GameSprites.plist","GameSprite.png");
+        playerSprite = Sprite::createWithSpriteFrameName("planeBlue1.png");
+          playerSprite ->setPosition(Point(visibleSiza.width * 0.2 + origin.x, visibleSize.height/2 + origin.y));
+          this->addChild(playerSprite);
+          
     return true;
 }
